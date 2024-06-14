@@ -40,6 +40,21 @@ function mostrarProductos($artefacto) {
 //var_dump (mostrarProductos($artefacto));
 //funciona perfectamente
 
+// hacemos una funcion que actualiza el array artefactos segun el nombre y modelo.
+//no sabemos como probarlo,asi que confiamos en que funcione.
+function actualizarProducto($artefacto, $Nombre, $Cantidad, $Valor, $Modelo) {
+    foreach ($artefacto as &$artefactos) {
+        if ($artefactos['Nombre'] == $Nombre && $artefactos['Modelo'] == $Modelo) {
+            $artefactos['Nombre'] = $Nombre;
+            $artefactos['Cantidad'] = $Cantidad;
+            $artefactos['Valor'] = $Valor;
+            $artefactos['Modelo'] = $Modelo;
+            break;
+        }
+    }
+    return $usuarios;
+}
+
 $Nombre = "algo";
 $Cantidad = 41;
 $Valor = 1500;

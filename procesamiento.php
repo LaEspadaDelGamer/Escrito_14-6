@@ -34,4 +34,17 @@ function mostrarProductos($artefacto) {
     return $result;
 }
 
+// hacemos una funcion que actualiza el array artefactos segun el nombre y modelo.
+function actualizarProducto($artefacto, $Nombre, $Cantidad, $Valor, $Modelo) {
+    foreach ($artefacto as &$artefactos) {
+        if ($artefactos['Nombre'] == $Nombre && $artefactos['Modelo'] == $Modelo) {
+            $artefactos['Nombre'] = $Nombre;
+            $artefactos['Cantidad'] = $Cantidad;
+            $artefactos['Valor'] = $Valor;
+            $artefactos['Modelo'] = $Modelo;
+            break;
+        }
+    }
+    return $usuarios;
+}
 ?>
