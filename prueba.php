@@ -67,11 +67,26 @@ function calcularValorTotal($artefacto){
 //echo $ValorTotal;
 //funciona perfectamente
 
+// incluimos una funcion que filtra los productos segun el valor que le agregamos
+// Funciona bastante bien, con el problema de que al final del texto, incluye un "NULL" y no sabemos porque es, suponemos que es por el return.
+function filtrarProductosPorValor($artefacto, $RangoM){
+    
+    foreach ($artefacto as $artefactos) {
+        
+      if($artefactos['Valor'] > $RangoM){
+        echo "Nombre: ", $artefactos['Nombre'], " Valor: " ,$artefactos['Valor'], " Cantidad: ", $artefactos['Cantidad'], " Modelo: ", $artefactos['Modelo'], "<br>";
+      }
+      
+    }
+    
+}
+
 $Nombre = "algo";
 $Cantidad = 41;
 $Valor = 1500;
 $Modelo = "LG";
+$RangoM = 1000;
 $artefacto = agregarProducto($Nombre, $Cantidad, $Valor, $Modelo);
 $ValorTotal = calcularValorTotal($artefacto);
-
+var_dump (filtrarProductosPorValor($artefacto, $RangoM));
 ?>

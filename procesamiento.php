@@ -57,6 +57,19 @@ function calcularValorTotal($artefacto){
     }
     return $total;
 }
-//mirar si incluir una variable total
+// incluimos una funcion que filtra los productos segun el valor que le agregamos
+function filtrarProductosPorValor($artefacto, $RangoM){
+    
+    foreach ($artefacto as $artefactos) {
+        
+      if($artefactos['Valor'] > $RangoM){
+        echo "Nombre: ", $artefactos['Nombre'], " Valor: " ,$artefactos['Valor'], " Cantidad: ", $artefactos['Cantidad'], " Modelo: ", $artefactos['Modelo'], "<br>";
+      }
+      
+    }
+    
+}
+
+//mirar si incluir una variable total y otra para el rangoM.
 
 ?>

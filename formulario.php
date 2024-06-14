@@ -45,6 +45,9 @@ if (isset($_SESSION['resultado'])) {
         <input type="radio" id="CalcularT" name="accion" value="CalcularT">
         <label for="CalcularT">Calcular Valor Total</label><br>
 
+        <!-- se añade otra variable mas solo para el rango de precios minimo -->
+        <label for="RangoM">Rango de precio minimo:</label>
+        <input type="number" id="RangoM" name="RangoM"><br>
         <input type="radio" id="Filtrar" name="accion" value="Filtrar">
         <label for="Filtrar">Filtrar Productos por Valor</label><br>
 
