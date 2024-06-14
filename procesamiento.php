@@ -14,4 +14,12 @@ function agregarProducto($Nombre, $Cantidad, $Valor, $Modelo) {
     return $artefacto;
 }
 
+function buscarProductoPorModelo($artefacto, $Modelo) {
+    foreach ($artefacto as $artefactos) {
+        if ($artefactos['Modelo'] == $Modelo) {
+            return "Nombre: " . $artefactos['Nombre'] . "<br>";
+        }
+    }
+    return "Modelo no encontrado.<br>";
+}
 ?>
