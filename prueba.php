@@ -68,18 +68,33 @@ function calcularValorTotal($artefacto){
 //funciona perfectamente
 
 // incluimos una funcion que filtra los productos segun el valor que le agregamos
-// Funciona bastante bien, con el problema de que al final del texto, incluye un "NULL" y no sabemos porque es, suponemos que es por el return.
 function filtrarProductosPorValor($artefacto, $RangoM){
-    
+    $result = '';
+
     foreach ($artefacto as $artefactos) {
-        
-      if($artefactos['Valor'] > $RangoM){
-        echo "Nombre: ", $artefactos['Nombre'], " Valor: " ,$artefactos['Valor'], " Cantidad: ", $artefactos['Cantidad'], " Modelo: ", $artefactos['Modelo'], "<br>";
-      }
-      
+        if($artefactos['Valor'] > $RangoM){
+            $result .= "Nombre: " . $artefactos['Nombre'] . ", Cantidad: " . $artefactos['Cantidad'] . " Valor: ". $artefactos['Valor']. " Modelo: " . $artefactos['Modelo'] . "<br>";
     }
+
+    }
+    return $result;
     
 }
+//echo filtrarProductosPorValor($artefacto, $RangoM);
+// Funciona bastante bien, con el problema de que al final del texto, incluye un "NULL" y no sabemos porque es, suponemos que es por el return.
+
+// hacer una funcion la cual nos lista todos y cada uno de los modelos disponibles.
+function listarModelosDisponibles($artefacto) {
+    $result = '';
+    foreach ($artefacto as $artefactos) {
+        $result .= $artefactos['Modelo'] . "<br>";
+
+    }
+    return $result;
+}
+//echo listarModelosDisponibles($artefacto);
+//funciona perfectamente
+
 
 $Nombre = "algo";
 $Cantidad = 41;
@@ -88,5 +103,5 @@ $Modelo = "LG";
 $RangoM = 1000;
 $artefacto = agregarProducto($Nombre, $Cantidad, $Valor, $Modelo);
 $ValorTotal = calcularValorTotal($artefacto);
-var_dump (filtrarProductosPorValor($artefacto, $RangoM));
+
 ?>

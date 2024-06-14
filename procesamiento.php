@@ -70,6 +70,16 @@ function filtrarProductosPorValor($artefacto, $RangoM){
     
 }
 
+// hacer una funcion la cual nos lista todos y cada uno de los modelos disponibles.
+function listarModelosDisponibles($artefacto) {
+    $result = '';
+    foreach ($artefacto as $artefactos) {
+        $result .= $artefactos['Modelo'] . "<br>";
+
+    }
+    return $result;
+}
+
 //mirar si incluir una variable total y otra para el rangoM.
 
 ?>
