@@ -95,6 +95,15 @@ function listarModelosDisponibles($artefacto) {
 //echo listarModelosDisponibles($artefacto);
 //funciona perfectamente
 
+// hacer una funcion que calcule el promedio de un array, no funciona
+function calcularValorPromedio($artefacto,$ValorTotal){
+    $promedio = $ValorTotal;
+    foreach ($artefacto as $artefactos => $Valor) {
+       $promedio = $ValorTotal / $artefactos['Valor'];
+    }
+    return $promedio;
+}
+//echo calcularValorPromedio($artefacto,$ValorTotal);  
 
 $Nombre = "algo";
 $Cantidad = 41;
@@ -103,5 +112,4 @@ $Modelo = "LG";
 $RangoM = 1000;
 $artefacto = agregarProducto($Nombre, $Cantidad, $Valor, $Modelo);
 $ValorTotal = calcularValorTotal($artefacto);
-
 ?>

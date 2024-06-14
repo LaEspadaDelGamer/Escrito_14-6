@@ -30,7 +30,7 @@ if (isset($_SESSION['resultado'])) {
         <label for="Modelo">Modelo:</label>
         <input type="text" id="Modelo" name="Modelo"><br>
 
-        <input type="radio" id="agregar" name="accion" value="agregar">
+        <input type="radio" id="Agregar" name="accion" value="agregar">
         <label for="agregar">Agregar Producto</label><br>
 
         <input type="radio" id="Buscar" name="accion" value="Buscar">
@@ -53,9 +53,6 @@ if (isset($_SESSION['resultado'])) {
 
         <input type="radio" id="Listar" name="accion" value="Listar">
         <label for="Listar">Listar Modelos Disponibles</label><br>
-
-        <input type="radio" id="CalcularP" name="accion" value="CalcularP">
-        <label for="CalcularP">Calcular Valor Promedio</label><br>
 
         <input type="submit" value="Enviar">
     </form>
