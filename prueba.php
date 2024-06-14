@@ -52,13 +52,26 @@ function actualizarProducto($artefacto, $Nombre, $Cantidad, $Valor, $Modelo) {
             break;
         }
     }
-    return $usuarios;
+    return $artefacto;
 }
+
+// incluimos una funcion que calcula la cantidad por el valor de todos los productos
+function calcularValorTotal($artefacto){
+    $total = 0;
+    foreach ($artefacto as $artefactos) {
+       $total = $total + $artefactos['Valor'] * $artefactos['Cantidad'];
+
+    }
+    return $total;
+}
+//echo $ValorTotal;
+//funciona perfectamente
 
 $Nombre = "algo";
 $Cantidad = 41;
 $Valor = 1500;
 $Modelo = "LG";
 $artefacto = agregarProducto($Nombre, $Cantidad, $Valor, $Modelo);
+$ValorTotal = calcularValorTotal($artefacto);
 
 ?>
